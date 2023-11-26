@@ -41,7 +41,16 @@ section{
   background-color: #24262f;
 }
 
-img{
+.project-card{
+  width: 50%;
+  text-align: center;
+}
+
+.project-card img{
   max-width: 100%;
-  height: 50%;
+  height: auto;
+}
+
+.project-card h3,p{
+ text-align: left;
 }
