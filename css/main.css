@@ -1,0 +1,41 @@
+body{
+    background-color: #0e1120;
+    font-family: 'Quicksand', sans-serif;
+    color: #cecece;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+header{
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+h1{
+  margin-right: 15px;
+}
+
+#contact{
+  display: flex;
+}
+
+a{
+  color: #cecece;
+}
+
+.icon{
+  margin-right: 15px;
+}
+.icon i{
+  font-size: 35px;
+}
+
+section{
+  border: 5px solid black;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #24262f;
+}
