@@ -43,6 +43,9 @@ section{
 section ul{
   padding-left: 20px;
 }
+section li{
+  list-style: disclosure-closed;
+}
 
 .project-card{
   width: 50%;
