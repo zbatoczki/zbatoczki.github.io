@@ -128,12 +128,9 @@ section li {
 
 .projects-grid > .project-card {
     margin-bottom: 0;
-}
-
-.project-card {
-    text-align: center;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .project-card p:last-child {
@@ -143,16 +140,20 @@ section li {
 
 .project-card img,
 .project-card video {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
     display: block;
-    margin: 0 auto;
     border-radius: 3px;
 }
 
 .project-card h3,
 .project-card p {
     text-align: left;
+}
+
+.project-card h3 {
+    margin-top: 12px;
 }
 
 /* ── Skills ── */
