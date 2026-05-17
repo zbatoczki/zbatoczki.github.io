@@ -1,64 +1,136 @@
+:root {
+    --bg:          #080a13;
+    --surface:     #12151f;
+    --border:      #2a2d3a;
+    --text:        #cecece;
+    --text-muted:  #7a7f96;
+    --accent:      #4ecdc4;
+    --accent-dim:  rgba(78, 205, 196, 0.12);
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 body {
-    background-color: #080a13;
+    background-color: var(--bg);
     font-family: 'Quicksand', sans-serif;
-    color: #cecece;
+    color: var(--text);
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 15px;
+    margin: 0 auto;
+    padding: 0 20px;
+    line-height: 1.6;
 }
 
+/* ── Header ── */
 header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px 0;
+    gap: 12px;
+    padding: 32px 0 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 4px;
 }
 
 h1 {
     margin: 0;
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+    color: #fff;
 }
 
 #contact {
     display: flex;
+    gap: 4px;
 }
 
+/* ── Links ── */
 a {
-    color: #cecece;
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+a:hover {
+    opacity: 0.7;
 }
 
 .icon {
-    margin-right: 15px;
+    color: var(--text);
+    transition: color 0.2s, transform 0.2s;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.icon:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .icon i {
-    font-size: 30px;
+    font-size: 28px;
 }
 
+/* ── Section headings ── */
+h2 {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 40px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+h3 {
+    margin: 0 0 2px;
+    font-size: 1.05rem;
+    color: #fff;
+}
+
+h4 {
+    margin: 14px 0 4px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+/* ── Content sections ── */
 section {
-    border: 3px solid black;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
     padding: 20px;
-    margin-bottom: 20px;
-    background-color: #24262f66;
+    margin-bottom: 14px;
+    background-color: var(--surface);
+    border-radius: 4px;
+    transition: border-left-color 0.25s, background-color 0.25s;
+}
+
+section:hover {
+    border-left-color: #7eddd8;
+    background-color: #14172280;
 }
 
 section ul {
-    padding-left: 20px;
+    padding-left: 18px;
+    margin: 6px 0 0;
 }
 
 section li {
     list-style: disclosure-closed;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+    line-height: 1.55;
 }
 
+/* ── Projects ── */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 14px;
     margin-bottom: 20px;
 }
 
@@ -70,6 +142,12 @@ section li {
     text-align: center;
     display: flex;
     flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .project-card p:last-child {
@@ -83,6 +161,7 @@ section li {
     height: auto;
     display: block;
     margin: 0 auto;
+    border-radius: 3px;
 }
 
 .project-card h3,
@@ -90,24 +169,41 @@ section li {
     text-align: left;
 }
 
+/* ── Skills ── */
 .skills {
-    margin: 0;
+    margin: 0 0 8px;
     padding: 0;
 }
 
 .skills li {
     display: inline-block;
     list-style: none;
-    border: 2px solid #24262f;
-    border-radius: 7px;
-    padding: 10px;
-    margin: 5px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 12px;
+    margin: 4px;
+    font-size: 0.875rem;
+    background-color: var(--surface);
+    cursor: default;
+    transition: border-color 0.2s, background-color 0.2s, color 0.2s;
 }
 
+.skills li:hover {
+    border-color: var(--accent);
+    background-color: var(--accent-dim);
+    color: #fff;
+}
+
+/* ── Mobile ── */
 @media only screen and (max-width: 480px) {
     header {
         flex-direction: column;
         align-items: flex-start;
+        padding: 20px 0 16px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
     }
 
     section {
@@ -115,7 +211,7 @@ section li {
     }
 
     .skills li {
-        padding: 8px;
-        font-size: 0.9rem;
+        padding: 5px 10px;
+        font-size: 0.85rem;
     }
 }
