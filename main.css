@@ -14,7 +14,7 @@
 
 body {
     background-color: var(--bg);
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Zen Kaku Gothic', sans-serif;
     color: var(--text);
     max-width: 900px;
     margin: 0 auto;
@@ -48,7 +48,9 @@ h1 {
 /* ── Links ── */
 a {
     color: var(--accent);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
     transition: opacity 0.2s;
 }
 
